@@ -1,0 +1,29 @@
+<div class="create-column">
+    <h2 class="form-title">Create</h2>
+
+    <form class="input-form" action="/videos/create" method="post" >
+    <label class="form-label" for="title">Title</label>
+    <input id="title-input" name="title" maxlength="50" value="{{video.title}}"/>
+    {{#with video.errors.title as |error|}}
+    <p class="error">{{error.message}}</p>
+    {{/with}}
+
+    <label class="form-label" for="description">Description</label>
+    <textarea id="description-input" name="description">{{video.description}}</textarea>
+    {{#with video.errors.description as |error|}}
+    <p class="error">{{error.message}}</p>
+    {{/with}}
+
+    <label class="form-label" for="url">URL</label>
+    <input id="url-input" name="url" maxlength="50" value="{{video.url}}"/>
+    {{#with video.errors.url as |error|}}
+    <p class="error">{{error.message}}</p>
+    {{/with}}
+
+    <div class="form-navigation">
+        <button class="add-video-button" id="submit-button" type="submit">
+        <p>Add Video</p>
+        </button>
+    </div>
+    </form>
+</div>
