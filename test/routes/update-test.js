@@ -43,7 +43,7 @@ describe('Server path: /videos/:id/edit', () => {
   describe('POST', () => {
     it('Updates a Video document', async () => {
       const video = await seedVideoToDatabase();
-      const updatedVideo = buildVideoObject({title: 'Updated Title!'});
+      const updatedVideo = buildVideoObject({title: 'Dog Ross does us a Learn'});
       const response = await request(app)
         .post(`/videos/${video._id}/updates`)
         .type('form')
@@ -56,7 +56,7 @@ describe('Server path: /videos/:id/edit', () => {
 
     it('redirects to the show page', async () => {
       const video = await seedVideoToDatabase();
-      const updatedVideo = buildVideoObject({title: 'Updated Title!'});
+      const updatedVideo = buildVideoObject({title: 'Dog Ross does us a Learn'});
       const response = await request(app)
         .post(`/videos/${video._id}/updates`)
         .type('form')
@@ -68,7 +68,7 @@ describe('Server path: /videos/:id/edit', () => {
 
     it('will not save an invalid record', async () => {
       const video = await seedVideoToDatabase();
-      const updatedVideo = {title: '', description: 'No Titles!', url: 'www.google.com'};
+      const updatedVideo = {title: '', description: 'I\'d rather learn about art bc exercise is pugly', url: 'https://www.youtube.com/watch?v=HiOWfhQnves'};
       const response = await request(app)
         .post(`/videos/${video._id}/updates`)
         .type('form')
@@ -81,7 +81,7 @@ describe('Server path: /videos/:id/edit', () => {
 
     it('responds with 400 on invalid updates and displays \'edit\'', async () => {
       const video = await seedVideoToDatabase();
-      const updatedVideo = {title: '', description: 'No Titles!', url: 'www.google.com'};
+      const updatedVideo = {title: '', description: 'I\'d rather learn about art bc exercise is pugly', url: 'https://www.youtube.com/watch?v=HiOWfhQnves'};
       const response = await request(app)
         .post(`/videos/${video._id}/updates`)
         .type('form')

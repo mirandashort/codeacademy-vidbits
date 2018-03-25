@@ -3,7 +3,7 @@ const {userCreatesVideo} = require('../test-utils');
 
 describe('user updating a video', () => {
   it('changes the values', () => {
-    const newTitle = 'Updated Title!';
+    const newTitle = 'Dog Ross does us a Learn';
     const createdVideo = userCreatesVideo();
 
     browser.click('#edit');
@@ -14,9 +14,9 @@ describe('user updating a video', () => {
   });
 
   it('overwrites the previous title', () => {
-    const newTitle = 'Updated Title!';
+    const newTitle = 'Dog Ross does us a Learn';
     const createdVideo = userCreatesVideo();
-    
+
     browser.click('#edit');
     browser.setValue('#title-input', newTitle);
     browser.click('#submit-button');
