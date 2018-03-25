@@ -14,7 +14,7 @@ describe('Server path: /videos/create', () => {
   afterEach(disconnectDatabase);
 
   describe('POST', () => {
-    it.only('saves a Video document', async () => {
+    it('saves a Video document', async () => {
       const response = await request(app).post('/videos/create').type('form').send(vidToCreate);
       const createdVideo = await Video.findOne(vidToCreate);
 
